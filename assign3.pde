@@ -71,9 +71,9 @@ void draw() {
   //begin
   switch(gameStare){
     case GAME_START:
-  image(start1IMG,0,0);
+  image(start2IMG,0,0);
    if(mouseX>=200&&mouseX<=440&&mouseY>=380&&mouseY<=420){
-   image(start2IMG,0,0);
+   image(start1IMG,0,0);
    if(mousePressed){
    gameStare=GAME_RUN;
    }
@@ -88,17 +88,16 @@ void draw() {
   rect(30,20,blood,40);
   image(hpImg,hpX,hpY);
   image(enemyImg1,enemyX,enemyY);
-  image(enemyImg2,enemyX,enemyY+10);
-  image(enemyImg3,enemyX,enemyY+20);
-  image(enemyImg4,enemyX,enemyY-10);
-  image(enemyImg5,enemyX,enemyY-20);
+  image(enemyImg2,enemyX,enemyY+65);
+  image(enemyImg3,enemyX,enemyY+130);
+  image(enemyImg4,enemyX,enemyY-65);
+  image(enemyImg5,enemyX,enemyY-130);
   image(treasureImg,x,y);
   image(fighterImg,fighterX-20,fighterY-20);
   if(x+40>=fighterX&&fighterX+40>=x){
     if(y+40>=fighterY&&fighterY+40>=y){
     x=floor(random(20,620));
     y=floor(random(20,200));
-    blood+=19.5;
     }
   }
        if(enemyX+40>=fighterX&&fighterX+40>=enemyX){
@@ -107,7 +106,6 @@ void draw() {
        speedY=floor(random(-2,2));
        enemyX=20;
        enemyY=floor(random(40,440));
-       blood-=39;
        }
     }
     if(enemyX>680||enemyX<-40||enemyY<-40||enemyY>480){
@@ -156,32 +154,6 @@ void draw() {
  if(fighterY>=450){
    fighterY=450;
  }
- if(blood>=225){
- blood=225;
- }
- if(blood<=30){
-    gameStare=GAME_LOSE;
   }
-  break;
-  case GAME_LOSE:
-    image(end1Img,0,0);
-   if(mouseX>=200&&mouseX<=440&&mouseY>=300&&mouseY<=360){
-   image(end2Img,0,0);
-   if(mousePressed){
-   gameStare=GAME_RUN;
-   fill(220,0,0);
-   blood=69;
-   rectMode(CORNERS);
-   rect(30,20,blood,40);
-   fighterX=610;
-   fighterY=220;
-   enemyX=20;
-   enemyY=floor(random(40,440));
-   x=floor(random(20,620));
-   y=floor(random(20,200));
-  
-     }
-    }
-    break;
    }
-  }
+ 
