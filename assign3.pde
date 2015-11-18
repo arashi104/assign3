@@ -88,10 +88,10 @@ void draw() {
   rect(30,20,blood,40);
   image(hpImg,hpX,hpY);
   image(enemyImg1,enemyX,enemyY);
-  image(enemyImg2,enemyX,enemyY+65);
-  image(enemyImg3,enemyX,enemyY+130);
-  image(enemyImg4,enemyX,enemyY-65);
-  image(enemyImg5,enemyX,enemyY-130);
+  image(enemyImg2,enemyX+65,enemyY);
+  image(enemyImg3,enemyX+130,enemyY);
+  image(enemyImg4,enemyX-65,enemyY);
+  image(enemyImg5,enemyX-130,enemyY);
   image(treasureImg,x,y);
   image(fighterImg,fighterX-20,fighterY-20);
   if(x+40>=fighterX&&fighterX+40>=x){
